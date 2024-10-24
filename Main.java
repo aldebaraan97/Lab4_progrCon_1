@@ -1,7 +1,9 @@
+import java.io.*;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        sumOfNumbers();
 //        penniesForPay();
 //        fileLetterCounter();
@@ -10,6 +12,7 @@ public class Main {
 //        population();
 //        celsiusToF();
 //        barChart();
+          upperCaseFileConverter();
 
 
     }
@@ -209,7 +212,25 @@ public class Main {
 
     }
 
-    public static void upperCaseFileConverter() {
+    public static void upperCaseFileConverter() throws IOException {
+        File readFile;
+        FileWriter writeFile;
+        String readFilePath, writeFilePath;
+        Scanner input = new Scanner(System.in), textToUpper;
 
+        System.out.println("Enter the file name for reading: ");
+        readFilePath = input.nextLine();
+        readFile = new File(readFilePath);
+        textToUpper = new Scanner(readFile);
+
+        System.out.println("Enter the file name for writing: ");
+        writeFilePath = input.nextLine();
+        writeFile = new FileWriter(writeFilePath);
+
+        while (textToUpper.hasNext()) {
+            String data = textToUpper.nextLine();
+            writeFile.write(data.toUpperCase());
+            writeFile.close();
+        }
     }
 }
