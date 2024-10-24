@@ -12,7 +12,8 @@ public class Main {
 //        population();
 //        celsiusToF();
 //        barChart();
-          upperCaseFileConverter();
+//        upperCaseFileConverter();
+//        squareDisplay();
 
 
     }
@@ -232,5 +233,33 @@ public class Main {
             writeFile.write(data.toUpperCase());
             writeFile.close();
         }
+    }
+
+    public static void budgetAnalysis() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the amount tat you have budgeted:");
+    }
+
+    public static void squareDisplay() {
+        Scanner input = new Scanner(System.in);
+        int squareSide;
+
+        System.out.println("Enter a positive integer <= 15: ");
+        squareSide = input.nextInt();
+
+        for (int w = 1; w <= squareSide; w++){
+            System.out.println("X".repeat(squareSide));
+        }
+
+        // Using nested for loop
+        for (int w = 1; w <= squareSide; w++) {
+            System.out.println();
+            for (int l = 1; l <= squareSide; l++)
+                System.out.print("X");
+        }
+    }
+
+    public static void slotMachineSimulation() {
     }
 }
