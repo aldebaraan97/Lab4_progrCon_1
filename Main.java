@@ -220,12 +220,20 @@ public class Main {
         Scanner input = new Scanner(System.in), textToUpper;
 
         System.out.println("Enter the file name for reading: ");
+
+        // save the user input as a string to verify its validity
         readFilePath = input.nextLine();
+        // Initialize File object as the file with the name that the user provided
         readFile = new File(readFilePath);
+        // We initialize second Scanner object with the file that matches the user input
         textToUpper = new Scanner(readFile);
 
+
         System.out.println("Enter the file name for writing: ");
+
+        // Open file with write permissions that matches user input
         writeFilePath = input.nextLine();
+        // Initialize File object with user input
         writeFile = new FileWriter(writeFilePath);
 
         while (textToUpper.hasNext()) {
