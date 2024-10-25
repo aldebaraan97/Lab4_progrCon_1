@@ -7,14 +7,13 @@ public class Main {
 //        sumOfNumbers();
 //        penniesForPay();
 //        fileLetterCounter();
-//        largestNSmallest();
+        largestNSmallest();
 //        averageRainfall();
 //        population();
 //        celsiusToF();
 //        barChart();
 //        upperCaseFileConverter();
 //        squareDisplay();
-
 
     }
 
@@ -71,17 +70,22 @@ public class Main {
 
     public static void largestNSmallest() {
         Scanner input = new Scanner(System.in);
-        int largest = 0, smallest = 1, temp;
+        int largest = 0, smallest = 0, temp;
         boolean flag = true;
 
         System.out.println("Enter integers to find the smallest and largest. Enter '-99' to stop entering numbers:\n");
         while (flag) {
             temp = input.nextInt();
             flag = input.nextInt() != -99;
-            largest = (temp > largest) ? temp : largest;
+
+//            smallest = temp;
+//            largest = temp;
+
             smallest = (temp < smallest) ? temp : smallest;
+            largest = (temp > largest) ? temp : largest;
+
         }
-        System.out.println("The largest number is: " + largest + "\n the smallest is: " + smallest);
+        System.out.println("The largest number is: " + largest + "\nthe smallest number is: " + smallest);
     }
 
     // Assignments
