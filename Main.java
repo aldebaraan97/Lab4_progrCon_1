@@ -72,18 +72,26 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int largest = 0, smallest = 0, temp;
         boolean flag = true;
+        boolean intializer = true;
 
-        System.out.println("Enter integers to find the smallest and largest. Enter '-99' to stop entering numbers:\n");
+        System.out.println("Enter '-99' to stop entering numbers:\n");
         while (flag) {
+            System.out.println("Enter a integer:");
             temp = input.nextInt();
-            flag = input.nextInt() != -99;
 
-//            smallest = temp;
-//            largest = temp;
-
-            smallest = (temp < smallest) ? temp : smallest;
-            largest = (temp > largest) ? temp : largest;
-
+            if (temp == -99){
+                flag = false;
+            }
+            else {
+                if (intializer){
+                    intializer = false;
+                    largest = smallest = temp;
+                }
+                else {
+                    largest = (temp > largest) ? temp : largest;
+                    smallest = (temp < smallest) ?  temp : smallest;
+                }
+            }
         }
         System.out.println("The largest number is: " + largest + "\nthe smallest number is: " + smallest);
     }
