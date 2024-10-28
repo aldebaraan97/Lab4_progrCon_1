@@ -7,13 +7,16 @@ public class Main {
 //        sumOfNumbers();
 //        penniesForPay();
 //        fileLetterCounter();
-        largestNSmallest();
+//        largestNSmallest();
 //        averageRainfall();
 //        population();
 //        celsiusToF();
-//        barChart();
+        barChart();
 //        upperCaseFileConverter();
 //        squareDisplay();
+//        budgetAnalysis();
+//        slotMachineSimulation();
+
 
     }
 
@@ -203,26 +206,25 @@ public class Main {
 
         System.out.println("SALES BAR CHART");
         System.out.print("Store 1: ");
-        for (int row = 0; row <=1; row++){
-            System.out.println("Store 1: " + "*".repeat((int)store1 / 100));
+        for (int row = 0; row <= (int)store1 / 100; row++){
+            System.out.print("*");
             }
-        System.out.print("Store 2: ");
-        for (int row = 0; row <=1; row++){
-            System.out.println("Store 1: " + "*".repeat((int)store2 / 100));
+        System.out.print("\nStore 2: ");
+        for (int row = 0; row <= (int)store2 / 100; row++){
+            System.out.print("*");
         }
-        System.out.print("Store 3: ");
-        for (int row = 0; row <=1; row++){
-            System.out.println("Store 1: " + "*".repeat((int)store3 / 100));
+        System.out.print("\nStore 3: ");
+        for (int row = 0; row <= (int)store3 / 100; row++){
+            System.out.print("*");
         }
-        System.out.print("Store 4: ");
-        for (int row = 0; row <=1; row++){
-            System.out.println("Store 1: " + "*".repeat((int)store4 / 100));
+        System.out.print("\nStore 4: ");
+        for (int row = 0; row <= (int)store4 / 100; row++){
+            System.out.print("*");
         }
-        System.out.print("Store 5: ");
-        for (int row = 0; row <=1; row++){
-            System.out.println("Store 1: " + "*".repeat((int)store5 / 100));
+        System.out.print("\nStore 5: ");
+        for (int row = 0; row <= (int)store5 / 100; row++){
+            System.out.print("*");
         }
-
     }
 
     public static void upperCaseFileConverter() throws IOException {
@@ -257,8 +259,26 @@ public class Main {
 
     public static void budgetAnalysis() {
         Scanner input = new Scanner(System.in);
+        double budget;
+        double expenses = 0;
+        boolean flag = true;
+        double userInput;
 
-        System.out.println("Enter the amount tat you have budgeted:");
+        System.out.println("Enter the amount that you have budgeted:");
+        budget = input.nextDouble();
+
+        while (flag){
+            System.out.println("Enter expense:");
+            userInput = input.nextDouble();
+
+            if (userInput == 0) {
+                flag = false;
+            }
+            else
+                expenses += userInput;
+        }
+        System.out.println("You are " + ((budget < expenses)?
+                budget - expenses + " over budget." : budget - expenses + " under budget."));
     }
 
     public static void squareDisplay() {
@@ -281,5 +301,6 @@ public class Main {
     }
 
     public static void slotMachineSimulation() {
+
     }
 }
